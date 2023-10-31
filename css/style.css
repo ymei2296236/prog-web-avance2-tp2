@@ -1,0 +1,84 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 4rem;
+	background-color: #eee;
+}
+
+main {
+	background-color: #eee;
+	padding: 4rem;
+	width: 30rem;
+}
+
+h1 {
+	margin-bottom: 4rem;
+}
+
+p {
+	font-size: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	color: black;
+	text-underline-offset: 8px;
+}
+
+table {
+	margin-bottom: 2rem;
+}
+
+th {
+	text-align: left;
+}
+
+td {
+	max-width: 25rem;
+	padding: 1rem 2rem;
+}
+
+input:not([type="submit"]),
+textarea,
+select {
+	display: block;
+	margin: 0.5rem 0 1rem 0;
+	width: 18rem;
+	padding: 5px;
+}
+
+input[type="submit"] {
+	padding: 0.5rem 2rem;
+	font-size: 1rem;
+	letter-spacing: 0.5px;
+	text-decoration: none;
+	color: white;
+	padding: 0.5rem;
+	width: 10rem;
+	background-color: #222;
+	border-radius: 10px;
+	border: 0;
+}
+
+.bouton {
+	display: inline-block;
+	margin-top: 2rem;
+	margin-right: 1rem;
+	letter-spacing: 0.5px;
+	text-decoration: none;
+	color: white;
+	padding: 0.4rem 1rem;
+	background-color: #222;
+	border-radius: 10px;
+}
+
+.bouton--secondaire {
+	margin-top: 1.5rem;
+	color: black;
+	padding: 0.3rem 1rem;
+	background-color: white;
+	border: 1.5px solid black;
+}
