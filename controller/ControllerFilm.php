@@ -11,7 +11,7 @@ class ControllerFilm extends controller
         $film = new Film;
         $select = $film->select();
 
-        return Twig::render('film-index.php', ['films'=>$select]);
+        return Twig::render('film-index.php', ['films'=>$select, 'nbFilms' => count($select)]);
     }
 
     public function create()
@@ -26,7 +26,7 @@ class ControllerFilm extends controller
     {
         $film = new Film;
         $insert = $film->insert($_POST);
-
+        
         RequirePage::url('film/show/'.$insert);
     }
 
@@ -57,7 +57,6 @@ class ControllerFilm extends controller
         $film = new Film;
         $update = $film->update($_POST);
 
-        //header('Location: ' . $_SERVER['HTTP_REFERER']);
         RequirePage::url('film/show/'.$_POST['id']);
     }
 

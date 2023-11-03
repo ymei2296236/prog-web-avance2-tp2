@@ -8,9 +8,9 @@
             </head>
             <nav>
             <ul>
-                <li><a href="{{path}}role">Rôles</a></li>
                 <li><a href="{{path}}film">Films</a></li>
-                <li><a href="{{path}}acteur">Acteurs / Actrices</a></li>
-
+                <li><a href="{{path}}role">Rôles classiques</a></li>
+                <li><a href="{{path}}acteur">Acteurs et actrices</a></li>
+                <li><a href="{{path}}">À propos</a></li>
             </ul>
         </nav>

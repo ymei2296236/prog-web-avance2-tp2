@@ -3,8 +3,8 @@
 
 <body>
     <main>
-        <h1>Détails</h1>
-
+        <a class="bouton bouton--tertiaire" href="{{path}}film/index">< Retourner à la liste de films</a>
+        <h1 class="h1-moins-espace">Détails</h1>
         <table>
             <tr>
                 <th>Titre</th>
@@ -27,15 +27,15 @@
                 <td>{{ genre.nom }}</td>
             </tr>
         </table>
-        
-        <a class="bouton" href="{{path}}film/edit/{{ film.id }}">Modifier</a>
+        <div class="boutons">
+            <a class="bouton" href="{{path}}film/edit/{{ film.id }}">Modifier</a>
+            <form action="{{path}}film/destroy" method="post">
+                <input type="hidden" name="film_id" value="{{ film.id }}">
+                <input class="bouton bouton--secondaire" type="submit" value="Supprimer">
+            </form>
+        </div>
 
-        <form action="{{path}}film/destroy" method="post">
-            <input type="hidden" name="film_id" value="{{ film.id }}">
-            <input type="submit" value="Supprimer">
-        </form>
 
-        <a class="bouton bouton--secondaire" href="{{path}}film/index">Retourner à la liste de films</a>
     </main>    
 </body>
 </html>

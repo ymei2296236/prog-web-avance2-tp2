@@ -9,7 +9,7 @@ class ControllerHome extends Controller
 
     public function error($e = null)
     {
-        return 'error '.$e;
+       return Twig::render($e.'.php');
     }
 }
 

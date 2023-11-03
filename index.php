@@ -8,7 +8,7 @@ require_once('library/Twig.php');
 
 $url = isset($_SERVER['PATH_INFO'])? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : '/';
 
-if($url == '/')
+if ($url == '/')
 {
     require_once('controller/ControllerHome.php');
     $controller = new ControllerHome;
@@ -26,13 +26,35 @@ else
         $controllerName = 'Controller'.$requestURL;
         $controller = new $controllerName;
 
-        if(isset($url[1]))
+        if (isset($url[1]) && $url[1] != '')
         {
             $method = $url[1];
-            if(isset($url[2])) echo $controller->$method($url[2]);
-            else echo $controller->$method();
+
+            if (method_exists($controller, $method))
+            {
+                if(isset($url[2])) 
+                {
+                    $value = $url[2];
+    
+                    if ($value != '') echo $controller->$method($value);
+                    else echo $controller->$method();
+                }
+                else 
+                {
+                    echo $controller->$method();
+                }
+            }
+            else
+            {
+                require_once('controller/ControllerHome.php');
+                $controller = new ControllerHome;
+                echo $controller->error('404'); 
+            }
         }
-        else echo $controller->index();
+        else 
+        {
+            echo $controller->index();
+        }
     }
     else
     {

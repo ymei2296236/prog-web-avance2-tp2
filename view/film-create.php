@@ -2,8 +2,8 @@
 
 <body>
     <main>
-        <h1>Ajouter un film</h1>
-
+        <a class="bouton bouton--tertiaire" href="{{path}}film/index">< Retourner à la liste de films</a>
+        <h1 class="h1-moins-espace">Ajouter un film</h1>
         <form action="{{path}}film/store" method="post">
             <label>Titre
                 <textarea name="titre" cols=40 rows=2 ></textarea>
@@ -24,10 +24,12 @@
                     {% endfor %}
                 </select>
             </label>
-            <input type="submit" value="Enregistrer">
+            <div class="boutons" >
+                <input class="bouton" type="submit" value="Enregistrer">
+            </div>
+
         </form>
         
-        <a class="bouton bouton--secondaire" href="{{path}}film/index">Retourner</a>
     </main>
 </body>
 </html>

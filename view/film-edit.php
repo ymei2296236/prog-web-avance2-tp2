@@ -2,12 +2,12 @@
 
 <body>
     <main>
-        <h1>Modifier le film</h1>
-
+    <a class="bouton bouton--tertiaire" href="{{path}}film/index">< Retourner à la liste de films</a>
+        <h1 class="h1-moins-espace">Modifier le film</h1>
         <form action="{{path}}film/update" method="post">
             <input type="hidden" name="id" value="{{ film.id }}">
             <label>Titre
-                <input type="text" name="titre" value="{{ film.titre }}">
+                <textarea type="text" name="titre" cols=40 rows=2>{{ film.titre }}</textarea>
             </label>
             <label>Année de production
                 <input type="number" name="anneeProduction" value="{{ film.anneeProduction }}"> 
@@ -31,10 +31,11 @@
                     {% endfor %}
                 </select>
             </label>
-            <input type="submit" value="Enregistrer">
+            <div class="boutons" >
+                <input class="bouton" type="submit" value="Enregistrer">
+            </div>
+
         </form>
-        
-        <a class="bouton bouton--secondaire" href="{{path}}film/index">Retourner</a>
     </main>
 </body>
 </html>
